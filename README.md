@@ -1,2 +1,2 @@
-# Kavanozlar-m
+# Kavanozlarım
 Türkçe Kink Jars
