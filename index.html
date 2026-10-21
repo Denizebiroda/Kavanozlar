@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fbf6ef">
-<meta name="description" content="Kavanozlarını doldur: bir renk seç, 28 başlığın her birini değerlendir ve görselini kaydet.">
+<meta name="description" content="Kavanozlarını doldur: bir renk seç, 26 başlığın her birini değerlendir ve görselini kaydet.">
 <title>Kavanozlarını Doldur — Kink Jars Türkçe</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,15 +23,15 @@
 <section class="panel"><div class="step">Adım 2</div><h2>Rengini seç</h2><div class="picker"><div><div class="swatches" id="swatches" aria-label="Renk seçenekleri"></div><div class="sliders"><label class="sl">Kırmızı<input type="range" id="r" min="0" max="255"><output id="rv"></output></label><label class="sl">Yeşil<input type="range" id="g" min="0" max="255"><output id="gv"></output></label><label class="sl">Mavi<input type="range" id="b" min="0" max="255"><output id="bv"></output></label></div><div class="hexrow"><input type="text" id="hex" maxlength="7" spellcheck="false" aria-label="Renk kodu"><button class="ghost" id="surprise" type="button">Beni şaşırt</button></div></div><div class="preview-jars" aria-hidden="true"><canvas id="pv1"></canvas><canvas id="pv2"></canvas><canvas id="pv3"></canvas></div></div></section>
 <section class="panel"><div class="step">Adım 3</div><h2>Kavanozlarını doldur</h2><p class="hint">Bir sayı seç. Aynı sayıya yeniden dokunursan kavanoz boşalır. Seçim yapmak zorunda değilsin.</p><div id="questions"></div></section>
 </main><aside class="side"><section class="panel" id="done"><div class="step">Adım 4</div><h2>Kavanozların</h2><canvas class="poster" id="poster" aria-label="Doldurduğun kavanozların ön izlemesi"></canvas><button class="big" id="save" type="button">Görselimi kaydet</button><div class="small-links"><span>Yanıtların bu cihazda kalır.</span><button class="linkbtn" id="reset" type="button">Baştan başla</button></div><p class="privacy">Bu sayfa seçimlerini bir sunucuya göndermez. Her başlığı boş bırakabilir veya dilediğin zaman değiştirebilirsin.</p></section></aside></div></div>
-<div class="bar"><div class="bar-in"><span id="progress">0 / 28 kavanoz dolduruldu</span><button class="big" id="saveBar" type="button">Görselimi kaydet</button></div></div>
+<div class="bar"><div class="bar-in"><span id="progress">0 / 26 kavanoz dolduruldu</span><button class="big" id="saveBar" type="button">Görselimi kaydet</button></div></div>
 <div id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mt"><div class="sheet"><h3 id="mt">Kavanozların hazır!</h3><p>Görsel indirilmediyse resme basılı tut (veya sağ tıkla) ve “Görseli kaydet” seçeneğini seç.</p><img id="modalImg" alt="Doldurduğun kavanozların görseli"><button class="big" id="closeModal" type="button">Tamam</button></div></div>
 <script>
-// Orijinal sitedeki 28 başlığın Türkçe karşılıkları; sıralama korunmuştur.
+// Orijinal sitedeki 26 başlığın Türkçe karşılıkları; sıralama korunmuştur.
 const JARS = [
  ["Baskın rolde","olmak"],["Boyun eğen rolde","olmak"],["Her iki rolü de","üstlenmek"],["Boğaz sıkma"],["Boğazının","sıkılması"],["Şaplak atmak"],["Şaplak yemek"],
- ["DDLG / MDLB"],["Yaş rolü","oyunu"],["Kamusal alanda","erotik davranış"],["Mum / balmumu","oyunu"],["İdrar fetişi"],["Rol yapma"],["Önceden rızaya dayalı","rıza dışı rol (CNC)"],
+ ["Yaş rolü","oyunu"],["Kamusal alanda","erotik davranış"],["İdrar fetişi"],["Rol yapma"],["Önceden rızaya dayalı","rıza dışı rol (CNC)"],
  ["Orgazmının","kontrol edilmesi"],["Orgazm kontrolü"],["Ağız tıkaçları"],["Ayaklar"],["Anal"],["Bağlanmak"],["Başkalarını","bağlamak"],
- ["Aşağılama veya","küçük düşürme"],["Aşağılanmak veya","küçük düşürülmek"],["BDSM"],["Üçlü cinsel deneyim"],["Sadizm"],["Mazoşizm"],["Tükürme"]
+ ["Aşağılama veya","küçük düşürme"],["Aşağılanmak veya","küçük düşürülmek"],["BDSM"],["Üçlü cinsel deneyim"],["Sadizm (başkasına acı vermekten haz alma)"],["Mazoşizm acıya veya aşağılanmaya maruz kalmaktan haz alma)"],["Tükürme"]
 ];
 const PRESETS=["#e63946","#ff5d8f","#ff8c42","#ffd23f","#7bd389","#2ec4b6","#3a86ff","#5b2a86","#c77dff","#8d1d3a","#8d5524","#2b2d42"];
 const COLS=7,INK="#151311",PW=1200,ROWS=Math.ceil(JARS.length/COLS),PH=260+(ROWS-1)*345+360,STORE="kinkjars-tr-v1";
